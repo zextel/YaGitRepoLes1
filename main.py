@@ -1,4 +1,6 @@
 # This is a sample Python script.
+from binascii import Incomplete
+
 
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
@@ -11,6 +13,8 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    user_input = input()
+    if user_input is None or not len(user_input):
+        raise Incomplete("Вы не ввели приветствие!")
+    print_hi(user_input)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
