@@ -11,7 +11,6 @@ def print_hi(name):
     print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
 
 
-# Press the green button in the gutter to run the script.
 def verify_age(user_name):
     age_str = input(f"Введи свой возраст, {user_name}:\n")
     try:
@@ -23,6 +22,12 @@ def verify_age(user_name):
     except ValueError as ex:
         raise ex
 
+def gave_base_story(user_input):
+    if len(user_input) % 2:
+        print("Кот залез на шкаф, увидел птицу, чихнул — и упал в цветочный горшок. Все смеялись!")
+    else:
+        print("Девочка нашла монетку, купила мороженое, а оно оказалось с сюрпризом — внутри кольцо!")
+
 
 if __name__ == '__main__':
     try:
@@ -31,8 +36,8 @@ if __name__ == '__main__':
             raise Incomplete()
         print_hi(user_input)
         verify_age(user_input)
+        gave_base_story(user_input)
     except Incomplete as ex:
         print("Вы не ввели приветствие!")
     except Exception as ex:
-        print(f"Rsaised generic exception: {ex}")
-
+        print(f"Raised generic exception: {ex}")
